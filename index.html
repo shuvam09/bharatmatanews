@@ -1,0 +1,816 @@
+<!doctype html>
+<html lang="en">
+<head>
+<meta charset="utf-8">
+<meta name="viewport" content="width=device-width, initial-scale=1">
+<meta name="description" content="Bharat Mata News — Voice of the Nation">
+<title>Bharat Mata News | Coming Soon</title>
+
+<style>
+@import url('https://fonts.googleapis.com/css2?family=Inter:wght@400;500;600;700;800&family=Playfair+Display:wght@600;700;800&display=swap');
+
+:root{
+    --navy:#071b4d;
+    --red:#c71925;
+    --saffron:#ff7a00;
+    --green:#138a3d;
+    --gold:#d8a72c;
+    --dark:#111827;
+    --muted:#687080;
+    --cream:#fffdf7;
+    --line:#e8e2d5;
+}
+
+*{
+    margin:0;
+    padding:0;
+    box-sizing:border-box;
+}
+
+html{
+    scroll-behavior:smooth;
+}
+
+body{
+    min-height:100vh;
+    font-family:"Inter",Arial,sans-serif;
+    color:var(--dark);
+    background:
+        radial-gradient(circle at 50% 8%,rgba(255,184,0,.13),transparent 22%),
+        radial-gradient(circle at 5% 50%,rgba(255,122,0,.07),transparent 25%),
+        radial-gradient(circle at 95% 55%,rgba(19,138,61,.07),transparent 25%),
+        var(--cream);
+    overflow-x:hidden;
+}
+
+/* =========================
+   DECORATIVE BACKGROUND
+========================= */
+
+body::before{
+    content:"";
+    position:fixed;
+    width:520px;
+    height:520px;
+    border:1px solid rgba(216,167,44,.12);
+    border-radius:50%;
+    top:-260px;
+    left:50%;
+    transform:translateX(-50%);
+    pointer-events:none;
+}
+
+.tricolor{
+    position:absolute;
+    left:-5%;
+    width:110%;
+    height:90px;
+    z-index:-1;
+    opacity:.9;
+}
+
+.tricolor.top{
+    top:125px;
+    transform:rotate(-2deg);
+    background:
+        linear-gradient(
+            170deg,
+            transparent 0 25%,
+            rgba(255,122,0,.8) 26% 42%,
+            rgba(255,255,255,.95) 43% 58%,
+            rgba(19,138,61,.75) 59% 75%,
+            transparent 76%
+        );
+    filter:blur(1px);
+}
+
+.tricolor.bottom{
+    bottom:40px;
+    transform:rotate(2deg);
+    background:
+        linear-gradient(
+            170deg,
+            transparent 0 25%,
+            rgba(255,122,0,.75) 26% 42%,
+            rgba(255,255,255,.95) 43% 58%,
+            rgba(19,138,61,.75) 59% 75%,
+            transparent 76%
+        );
+    filter:blur(1px);
+}
+
+/* =========================
+   MAIN PAGE
+========================= */
+
+.page{
+    position:relative;
+    min-height:100vh;
+    max-width:1280px;
+    margin:auto;
+    padding:28px 5vw 20px;
+    display:flex;
+    flex-direction:column;
+}
+
+/* =========================
+   HEADER
+========================= */
+
+header{
+    display:flex;
+    align-items:center;
+    justify-content:center;
+    position:relative;
+    z-index:5;
+}
+
+.brand{
+    display:flex;
+    align-items:center;
+    gap:16px;
+}
+
+.logo-wrap{
+    width:72px;
+    height:72px;
+    border-radius:50%;
+    padding:4px;
+    background:linear-gradient(135deg,#f4d477,#b98516,#f7df91);
+    box-shadow:
+        0 0 0 5px rgba(216,167,44,.10),
+        0 12px 35px rgba(0,0,0,.16);
+    display:flex;
+    align-items:center;
+    justify-content:center;
+}
+
+.logo{
+    width:100%;
+    height:100%;
+    object-fit:cover;
+    border-radius:50%;
+    display:block;
+}
+
+.brand-name{
+    font-family:"Playfair Display",Georgia,serif;
+    font-size:31px;
+    font-weight:800;
+    letter-spacing:-.035em;
+    color:var(--navy);
+    text-shadow:0 2px 12px rgba(7,27,77,.08);
+}
+
+.brand-name span{
+    color:var(--red);
+}
+
+.header-badge{
+    position:absolute;
+    right:0;
+    top:14px;
+    padding:9px 15px;
+    border-radius:999px;
+    background:#fff;
+    border:1px solid var(--line);
+    box-shadow:0 8px 25px rgba(0,0,0,.06);
+    font-size:10px;
+    font-weight:800;
+    letter-spacing:.13em;
+    text-transform:uppercase;
+    color:var(--red);
+}
+
+/* =========================
+   HERO
+========================= */
+
+main{
+    flex:1;
+    display:flex;
+    justify-content:center;
+    align-items:center;
+    padding:48px 0 38px;
+}
+
+.hero{
+    width:100%;
+    max-width:950px;
+    text-align:center;
+}
+
+.hero-logo{
+    width:155px;
+    height:155px;
+    margin:0 auto 23px;
+    border-radius:50%;
+    padding:7px;
+    background:linear-gradient(
+        135deg,
+        #fff2a7,
+        #d39a20,
+        #fff0a0,
+        #b57b13
+    );
+    box-shadow:
+        0 0 0 10px rgba(216,167,44,.08),
+        0 18px 50px rgba(0,0,0,.16);
+}
+
+.hero-logo img{
+    width:100%;
+    height:100%;
+    border-radius:50%;
+    object-fit:cover;
+    display:block;
+}
+
+.eyebrow{
+    display:inline-flex;
+    align-items:center;
+    gap:10px;
+    padding:10px 19px;
+    border-radius:999px;
+    background:linear-gradient(135deg,#b9101b,#df313b);
+    color:white;
+    box-shadow:0 8px 25px rgba(199,25,37,.22);
+    font-size:11px;
+    font-weight:800;
+    letter-spacing:.16em;
+    text-transform:uppercase;
+    margin-bottom:20px;
+}
+
+.live-dot{
+    width:7px;
+    height:7px;
+    border-radius:50%;
+    background:#fff;
+    box-shadow:0 0 0 5px rgba(255,255,255,.18);
+}
+
+h1{
+    font-family:"Playfair Display",Georgia,serif;
+    font-size:clamp(55px,8vw,92px);
+    line-height:.95;
+    letter-spacing:-.055em;
+    color:var(--navy);
+    margin-bottom:17px;
+}
+
+h1 .red{
+    color:var(--red);
+}
+
+.tagline{
+    font-size:13px;
+    font-weight:800;
+    letter-spacing:.35em;
+    text-transform:uppercase;
+    color:#8b6417;
+    margin-bottom:23px;
+}
+
+.subtitle{
+    max-width:690px;
+    margin:auto;
+    color:var(--muted);
+    font-size:clamp(15px,2vw,17px);
+    line-height:1.75;
+}
+
+/* =========================
+   PROGRESS
+========================= */
+
+.progress-box{
+    max-width:600px;
+    margin:32px auto 0;
+    padding:17px 20px;
+    background:rgba(255,255,255,.86);
+    border:1px solid var(--line);
+    border-radius:18px;
+    box-shadow:0 12px 35px rgba(0,0,0,.06);
+    text-align:left;
+}
+
+.progress-head{
+    display:flex;
+    justify-content:space-between;
+    align-items:center;
+    margin-bottom:10px;
+    font-size:10px;
+    font-weight:800;
+    letter-spacing:.1em;
+    text-transform:uppercase;
+    color:#687080;
+}
+
+.progress-head strong{
+    color:var(--navy);
+    font-size:13px;
+}
+
+.progress{
+    height:8px;
+    border-radius:50px;
+    background:#ece9e1;
+    overflow:hidden;
+}
+
+.progress span{
+    display:block;
+    width:72%;
+    height:100%;
+    border-radius:50px;
+    background:linear-gradient(
+        90deg,
+        var(--saffron),
+        #f2b600,
+        var(--green)
+    );
+    box-shadow:0 0 15px rgba(255,122,0,.22);
+}
+
+/* =========================
+   FEATURE CARDS
+========================= */
+
+.cards{
+    display:grid;
+    grid-template-columns:repeat(3,1fr);
+    gap:15px;
+    max-width:850px;
+    margin:28px auto 0;
+}
+
+.card{
+    position:relative;
+    overflow:hidden;
+    background:rgba(255,255,255,.88);
+    border:1px solid var(--line);
+    border-radius:20px;
+    padding:21px 17px;
+    text-align:center;
+    box-shadow:0 12px 30px rgba(0,0,0,.045);
+    transition:.25s ease;
+}
+
+.card::before{
+    content:"";
+    position:absolute;
+    left:0;
+    top:0;
+    width:100%;
+    height:3px;
+    background:linear-gradient(
+        90deg,
+        var(--saffron),
+        white,
+        var(--green)
+    );
+}
+
+.card:hover{
+    transform:translateY(-5px);
+    box-shadow:0 20px 40px rgba(0,0,0,.09);
+}
+
+.card-icon{
+    width:48px;
+    height:48px;
+    border-radius:50%;
+    display:flex;
+    align-items:center;
+    justify-content:center;
+    margin:0 auto 12px;
+    font-size:21px;
+    color:white;
+    font-weight:800;
+}
+
+.card:nth-child(1) .card-icon{
+    background:linear-gradient(135deg,#d71920,#a90e17);
+    box-shadow:0 8px 20px rgba(199,25,37,.22);
+}
+
+.card:nth-child(2) .card-icon{
+    background:linear-gradient(135deg,#f7a900,#e56d00);
+    box-shadow:0 8px 20px rgba(255,122,0,.22);
+}
+
+.card:nth-child(3) .card-icon{
+    background:linear-gradient(135deg,#159347,#076b2c);
+    box-shadow:0 8px 20px rgba(19,138,61,.22);
+}
+
+.card strong{
+    display:block;
+    color:var(--navy);
+    font-family:"Playfair Display",Georgia,serif;
+    font-size:16px;
+    margin-bottom:6px;
+}
+
+.card p{
+    color:var(--muted);
+    font-size:11px;
+    line-height:1.55;
+}
+
+/* =========================
+   FOOTER / SOCIAL
+========================= */
+
+footer{
+    padding-top:18px;
+    border-top:1px solid var(--line);
+    display:flex;
+    align-items:center;
+    justify-content:center;
+    flex-direction:column;
+    gap:13px;
+    color:var(--muted);
+    font-size:11px;
+}
+
+.social{
+    display:flex;
+    align-items:center;
+    justify-content:center;
+    gap:12px;
+}
+
+.social a{
+    width:45px;
+    height:45px;
+    border-radius:50%;
+    display:flex;
+    align-items:center;
+    justify-content:center;
+    text-decoration:none;
+    color:white;
+    font-weight:800;
+    font-size:15px;
+    border:3px solid white;
+    box-shadow:0 7px 22px rgba(0,0,0,.15);
+    transition:.25s ease;
+}
+
+.social a:hover{
+    transform:translateY(-5px) scale(1.06);
+}
+
+.facebook{
+    background:#1877f2;
+    box-shadow:0 8px 24px rgba(24,119,242,.35) !important;
+}
+
+.instagram{
+    background:linear-gradient(
+        135deg,
+        #833ab4,
+        #fd1d1d,
+        #fcb045
+    );
+    box-shadow:0 8px 24px rgba(225,48,108,.35) !important;
+}
+
+.youtube{
+    background:#ff0000;
+    box-shadow:0 8px 24px rgba(255,0,0,.30) !important;
+}
+
+.x{
+    background:#000;
+    box-shadow:0 8px 24px rgba(0,0,0,.25) !important;
+}
+
+.social-label{
+    font-size:10px;
+    font-weight:700;
+    letter-spacing:.1em;
+    color:#777;
+    text-transform:uppercase;
+}
+
+/* =========================
+   MOBILE
+========================= */
+
+@media(max-width:760px){
+
+    .page{
+        padding:20px 17px 16px;
+    }
+
+    .header-badge{
+        display:none;
+    }
+
+    .brand{
+        gap:10px;
+    }
+
+    .logo-wrap{
+        width:50px;
+        height:50px;
+    }
+
+    .brand-name{
+        font-size:21px;
+    }
+
+    main{
+        padding:38px 0 30px;
+    }
+
+    .hero-logo{
+        width:125px;
+        height:125px;
+        margin-bottom:20px;
+    }
+
+    h1{
+        font-size:52px;
+    }
+
+    .tagline{
+        font-size:9px;
+        letter-spacing:.22em;
+    }
+
+    .subtitle{
+        font-size:14px;
+        line-height:1.7;
+    }
+
+    .cards{
+        grid-template-columns:1fr;
+        max-width:430px;
+    }
+
+    .card{
+        padding:18px;
+    }
+
+    .progress-box{
+        margin-top:25px;
+    }
+
+    .social a{
+        width:43px;
+        height:43px;
+    }
+
+    .tricolor{
+        opacity:.55;
+    }
+}
+
+@media(max-width:390px){
+
+    h1{
+        font-size:46px;
+    }
+
+    .hero-logo{
+        width:110px;
+        height:110px;
+    }
+
+    .brand-name{
+        font-size:19px;
+    }
+}
+
+/* =========================
+   SIMPLE ANIMATION
+========================= */
+
+@media(prefers-reduced-motion:no-preference){
+
+    .hero{
+        animation:heroIn .8s ease both;
+    }
+
+    .hero-logo{
+        animation:logoIn 1s ease both;
+    }
+
+    @keyframes heroIn{
+        from{
+            opacity:0;
+            transform:translateY(20px);
+        }
+        to{
+            opacity:1;
+            transform:translateY(0);
+        }
+    }
+
+    @keyframes logoIn{
+        from{
+            opacity:0;
+            transform:scale(.8);
+        }
+        to{
+            opacity:1;
+            transform:scale(1);
+        }
+    }
+}
+</style>
+</head>
+
+<body>
+
+<div class="page">
+
+    <div class="tricolor top"></div>
+    <div class="tricolor bottom"></div>
+
+    <header>
+        <div class="brand">
+
+            <!-- Put your uploaded logo in the same folder and name it img/logo.jpeg -->
+            <div class="logo-wrap">
+                <img src="img/logo.jpeg" alt="Bharat Mata News Logo" class="logo">
+            </div>
+
+            <div class="brand-name">
+                Bharat Mata <span>News</span>
+            </div>
+
+        </div>
+
+        <div class="header-badge">
+            Coming Soon
+        </div>
+    </header>
+
+
+    <main>
+
+        <section class="hero">
+
+            <!-- Main highlighted logo -->
+            <div class="hero-logo">
+                <img src="img/logo.jpeg" alt="Bharat Mata News">
+            </div>
+
+
+            <div class="eyebrow">
+                <span class="live-dot"></span>
+                Website Under Development
+            </div>
+
+
+            <h1>
+                Bharat Mata <span class="red">News</span>
+            </h1>
+
+
+            <div class="tagline">
+                Voice of the Nation
+            </div>
+
+
+            <p class="subtitle">
+                We are building something fresh, fast and meaningful.
+                Bharat Mata News is getting ready to bring you
+                news, stories and important updates from across India.
+            </p>
+
+
+            <div class="progress-box">
+
+                <div class="progress-head">
+                    <span>Building the Newsroom</span>
+                    <strong>72%</strong>
+                </div>
+
+                <div class="progress">
+                    <span></span>
+                </div>
+
+            </div>
+
+
+            <div class="cards">
+
+                <div class="card">
+
+                    <div class="card-icon">
+                        ◉
+                    </div>
+
+                    <strong>
+                        Latest Updates
+                    </strong>
+
+                    <p>
+                        Stay connected with important stories
+                        and breaking updates.
+                    </p>
+
+                </div>
+
+
+                <div class="card">
+
+                    <div class="card-icon">
+                        ✦
+                    </div>
+
+                    <strong>
+                        Stories That Matter
+                    </strong>
+
+                    <p>
+                        Thoughtful coverage with a focus
+                        on what matters to people.
+                    </p>
+
+                </div>
+
+
+                <div class="card">
+
+                    <div class="card-icon">
+                        ↗
+                    </div>
+
+                    <strong>
+                        Coming Very Soon
+                    </strong>
+
+                    <p>
+                        Our full digital newsroom is
+                        currently being prepared.
+                    </p>
+
+                </div>
+
+            </div>
+
+        </section>
+
+    </main>
+
+
+    <footer>
+
+        <div class="social-label">
+            Follow Bharat Mata News
+        </div>
+
+        <div class="social">
+
+            <!-- Replace # with actual social media URLs -->
+
+            <a
+                href="#"
+                class="facebook"
+                target="_blank"
+                aria-label="Facebook">
+                f
+            </a>
+
+            <a
+                href="#"
+                class="instagram"
+                target="_blank"
+                aria-label="Instagram">
+                ◎
+            </a>
+
+            <a
+                href="#"
+                class="youtube"
+                target="_blank"
+                aria-label="YouTube">
+                ▶
+            </a>
+
+            <a
+                href="#"
+                class="x"
+                target="_blank"
+                aria-label="X">
+                𝕏
+            </a>
+
+        </div>
+
+        <div>
+            © 2026 Bharat Mata News. All rights reserved.
+        </div>
+
+    </footer>
+
+</div>
+
+</body>
+</html>
